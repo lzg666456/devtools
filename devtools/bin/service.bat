@@ -1,16 +1,21 @@
 @echo off
 
 :begin
+	goto %1
+:usage
 	echo %~dp0
 	echo %@
-	goto end
+goto end
 
-:tomcat_start
-	call tomcat.bat start
-goto begin
+:tomcat
+	if "%2"=="start" echo abc
+	if "%2"=="stop" echo abc
+goto end
 
-:tomcat_stop
-	call tomcat.bat stop
-goto begin
+:mysql
+	if "%2"=="init" echo abc
+	if "%2"=="start" echo abc
+	if "%2"=="stop" echo abc
+goto end
 
 :end
