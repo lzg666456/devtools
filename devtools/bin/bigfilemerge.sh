@@ -3,14 +3,15 @@
 #       文件名分为两个部分，第一部分都相同，第二部分必须是从1开始的连续数字，例如file1，file2，file3  
 #       合并后的文件名为file.bak  
 
-    #输入文件名的第一部分  
+#输入文件名的第一部分  
 echo "Please enter file name:" 
 read Filename 
 
 if [ -z $Filename ];then 
    echo "Error:The file name can not be empty" 
    exit 
-fi  
+fi
+  
 #输入待合并文件的个数  
 echo "Please enter the number of subfiles:" 
 read Subfilenum
@@ -26,7 +27,8 @@ fi
 if [ $Subfilenum -eq 0 ];then
    echo "Error:The number of subfiles can not be zero"
    exit
-fi     
+fi
+     
 #合并文件 
 i=1
 Newfile=$Filename\.bak
